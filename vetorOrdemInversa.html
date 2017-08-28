@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var n = [];
+
+    for(var i =0; i < 7; i++)
+    {
+        n[i] = parseInt(prompt("Digite um número:"));
+    }
+
+    ExibeVetor(n);
+    ExibeVetorInvertor(n);
+
+
+    function ExibeVetor(n)
+    {
+        alert(n.join().toString());
+    }
+    
+    function ExibeVetorInvertor(n)
+    {
+        var arrInverso = [];
+        var x = 0;
+        for(var i = 6; i >= 0; i--)
+        {
+            arrInverso[x++] = n[i];
+        }
+        alert(arrInverso.join().toString());
+    }
+
+</script>
+</body>
+</html>

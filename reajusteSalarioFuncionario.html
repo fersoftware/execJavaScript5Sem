@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var salario = parseFloat(prompt("Digite o valor do seu salario:"));
+    var valorReajuste =  0;
+    var porcentagem = 0;
+
+    if(salario < 500)
+    {
+        porcentagem = 1.20;
+        valorReajuste = salario * porcentagem;
+    }
+    else if(salario >= 500 && salario <= 1000)
+    {
+        porcentagem = 1.15;
+        valorReajuste = salario * porcentagem;
+    }
+    else if(salario > 1000)
+    {
+        porcentagem = 1.10;
+        valorReajuste = salario * porcentagem;
+    }
+
+    alert("Você teve um reajuste de " +  porcentagem.replace('1.','') + "% - O valor foi R$ " + valorReajuste);
+
+
+</script>
+</body>
+</html>

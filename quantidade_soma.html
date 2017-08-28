@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    function somaNumeros(n) {
+        var soma = 0, i = 1, x = 0;
+
+        for(i; i <= n; i++) {
+            do {
+                x = parseInt(prompt('Digite o ' + i + 'º número'));
+            } while (isNaN(x));
+            soma += x;
+        }
+        return soma;
+    }
+
+    var n = 0;
+
+    do {
+        n = parseInt(prompt("Digite a quantidade de números"));
+    }while (isNaN(n));
+
+    alert("Resultado: " + somaNumeros(n));
+
+</script>
+</body>
+</html>

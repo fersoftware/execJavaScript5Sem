@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+<script type="text/javascript">
+
+
+    var expCPF =  /^\d{3}.\d{3}.\d{3}-\d{2}$/;
+    var str = prompt("Digite um CPF");
+    var res = expCPF.test(str);
+    if (res == false) {
+        alert("ERRO");
+    } else {
+        alert("OK!");
+    }
+
+</script>
+</body>
+</html>

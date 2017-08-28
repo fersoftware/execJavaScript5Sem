@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var diadoAno, mesDoAno;
+    var meses = [], somadias = 0;
+    var i;
+
+    for (i = 1; i <= 12; i++) {
+        for (var j = 1; j <= diasDoMes(i, 2017); j++) {
+            meses[i] = j;
+        }
+    }
+
+    do {
+        diadoAno = parseInt(prompt("Digite o dia (entre 1 a 31)"));
+    } while (diadoAno > 31 || diadoAno < 1);
+
+    do {
+        mesDoAno = parseInt(prompt("Digite o mes (entre 1 a 12)"));
+    } while (mesDoAno > 12 || mesDoAno < 1);
+
+
+    for (i = 1; i <= mesDoAno; i++) {
+        if (mesDoAno === i) {
+            if (diadoAno <= meses[i]) {
+                somadias += diadoAno;
+            }
+            else {
+                somadias += meses[i];
+            }
+        } else {
+            somadias += meses[i];
+        }
+    }
+
+    alert('Corresponde ao dia ' + somadias + ' do ano');
+
+    function diasDoMes(mes, ano) {
+        return new Date(ano, mes, 0).getDate();
+    }
+
+</script>
+</body>
+</html>

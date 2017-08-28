@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var nome = [];
+
+    for(var i =0; i < 10; i++)
+    {
+        nome[i] = prompt("Digite um nome:");
+    }
+
+    ExibeNomeOrdenado(nome);
+
+     var resultado = BuscaNome(prompt('Escolha um nome'),nome).toString()
+
+    if(resultado != -1)
+     {
+         alert('Nome Inexistente');
+     }
+     else
+     {
+         alert('Nome encontrado no indice ' +  resultado);
+     }
+
+    function ExibeNomeOrdenado(n)
+    {
+        alert(n.sort().join().toString());
+    }
+
+    function BuscaNome(nome, vetor)
+    {
+        for(var i =0; i < vetor.length; i++)
+        {
+            if(vetor[i] == nome)
+            {
+                rst = i;
+            }
+            else
+            {
+                rst = -1;
+            }
+        }
+        return
+    }
+
+</script>
+</body>
+</html>

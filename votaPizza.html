@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03</title>
+</head>
+<body>
+<script type="text/javascript">
+
+
+    var nVoto = 0;
+
+    var nVotoMussarela = 0, nVotoCalabreza = 0, nVotoQuatroQueijos = 0, n = 0;
+
+    do
+    {
+        nVoto = parseFloat(prompt(" Digite 5 para votar na Mussarela \n Digite 25 para votar na Calabreza \n Digite 50 para votar na Quatro Queijos \n" ));
+
+        if (nVoto === 5) {
+            nVotoMussarela++;
+            n++;
+        } else if (nVoto === 25) {
+            nVotoCalabreza++;
+            n++;
+        } else if (nVoto === 50) {
+            nVotoQuatroQueijos++;
+            n++;
+        } else {
+            alert('Código de voto inválido');
+        }
+    }while (n < 10);
+
+    alert("Resultado: \n Mussarela:" + nVotoMussarela + "\nCalabreza: " + nVotoCalabreza +"\n Quatro Queijos: " + nVotoQuatroQueijos );
+
+    if(nVotoMussarela > nVotoCalabreza || nVotoMussarela > nVotoQuatroQueijos)
+    {
+        alert('O valor favorito segundo a pesquisa foi a Mussarela');
+    }
+    else if(nVotoCalabreza > nVotoMussarela || nVotoCalabreza > nVotoQuatroQueijos)
+    {
+        alert('O valor favorito segundo a pesquisa foi a Calabreza');
+    }
+    else
+    {
+        alert('O valor favorito segundo a pesquisa foi a Quatro Queijos');
+    }
+
+</script>
+</body>
+</html>

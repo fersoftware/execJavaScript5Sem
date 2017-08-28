@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var nome = prompt("Digite seu nome:");
+    alert('Olá ' +  nome);
+    var anoNascimento = prompt("Qual o ano de seu Nascimento:");
+    var diaNascimento = prompt("Qual o dia de seu Nascimento:");
+    var mesNascimento = prompt("Qual o mês de seu Nascimento? (Entre 1 a 12)");
+    var dataHoje = prompt("Qual o dia, mês e ano de hoje?");
+
+    var arrDataHoje = dataHoje.split('/');
+    var diaHoje = arrDataHoje[0], mesHoje = arrDataHoje[1], anoHoje = arrDataHoje[2];
+
+    if(mesHoje === mesNascimento)
+    {
+        if(diaNascimento < dataHoje)
+        {
+            alert("O " + nome + " vai completar " + (anoHoje - anoNascimento) + "anos no " + diaNascimento + "/" + mesNascimento + "/" +  anoHoje);
+        }
+        else
+        {
+            alert("Você Completou " + (anoHoje - anoNascimento) + " anos em " + anoNascimento + "/" + mesNascimento + "/" +  anoHoje);
+        }
+    }
+
+</script>
+</body>
+</html>

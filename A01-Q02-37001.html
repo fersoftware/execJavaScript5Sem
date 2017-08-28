@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Avaliação 02</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    function multiplicaImpares()
+    {
+        debugger
+        var multiplicaImpar = 1;
+        var n;
+
+        do {
+            n = parseInt(prompt("Digite um número:"));
+            if(n %2 !== 0)
+            {
+                if(!isNaN(n))
+                {
+                    multiplicaImpar *= n;
+                }
+            }
+        } while (n != 0 && n != isNaN(n));
+
+        return multiplicaImpar;
+    }
+    alert("A valor dos números multiplicados impares é " + multiplicaImpares());
+
+</script>
+</body>
+</html>

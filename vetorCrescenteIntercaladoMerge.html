@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    var vetorNumInteiroA = [], vetorNumInteiroB = [], vetorNumInteiroC = [], i;
+
+    for(i = 0; i < 5; i++)
+    {
+        vetorNumInteiroA[i] = parseInt(prompt((i+1) +"- Digite um número"));
+    }
+
+    for(i = 0; i < 5; i++)
+    {
+        vetorNumInteiroB[i] = parseInt(prompt((i+1) +"- Digite mais um número"));
+    }
+
+    Merge(vetorNumInteiroA, vetorNumInteiroB);
+    vetorNumInteiroC.sort();
+
+    function Merge(vetorA, vetorB)
+    {
+        vetorA.sort(ordenador);
+        vetorB.sort(ordenador);
+        var i = 0; j = 0;
+
+        do
+        {
+            vetorNumInteiroC[i++] = vetorA[j];
+            vetorNumInteiroC[i++] = vetorB[j];
+            j++;
+        }while (j < 5);
+    }
+
+    function ordenador(x,y)
+    {
+        return x-y;
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    var vetor = new Array();
+    leVetor();
+
+    alert("Vetores " + exibeVetor(vetor));
+    alert("Ordenado " + ordenarVetor(vetor).join().toString());
+    alert("Média" + calculaImpares(vetor));
+
+    function leVetor()
+    {
+        var x;
+
+        do {
+            x = parseInt(prompt("Digite o tamanho do vetor:"));
+        } while (x < 5 || isNaN(x));
+
+        for(var i =0; i < x; i++)
+        {
+            do {
+                vetor[i] = parseInt(prompt("Digite um número:"));
+            } while (vetor[i] != 0 && isNaN(vetor[i]));
+        }
+
+        return vetor;
+    }
+
+    function exibeVetor(vetor)
+    {
+        return vetor.join();
+    }
+
+    function ordenarVetor(vetor)
+    {
+        return vetor.sort(ordenador);
+    }
+
+    function ordenador(x,y)
+    {
+        return x-y;
+    }
+
+    function calculaImpares(vetor)
+    {
+        var somaImpar = 0;
+        var impares = new Array();
+        var ind = 0;
+
+        for(var i =0; i < vetor.length; i++)
+        {
+            if(vetor[i] %2 !== 0)
+            {
+                somaImpar += vetor[i];
+                impares[ind++] = vetor[i];
+            }
+        }
+        return somaImpar / vetor.length;
+    }
+
+</script>
+
+</body>
+</html>

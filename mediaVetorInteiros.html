@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var n = [], mediaFinal;
+
+    for(var i =0; i < 3; i++)
+    {
+        n[i] = parseInt(prompt("Digite um número:"));
+    }
+
+    mediaFinal = ExibeMedia(n);
+    alert("A Média é " +  mediaFinal);
+    alert("Valores acima da média são " + verificaMedia(n,mediaFinal).join().toString());
+
+    function ExibeMedia(n)
+    {
+        var soma = 0;
+        for(var i =0; i < n.length; i++)
+        {
+            soma += n[i];
+        }
+
+        return soma / n.length;
+    }
+
+    function verificaMedia(vetor, valorMedia)
+    {
+        valorAcimaMedia = [];
+        for(var i =0; i < vetor.length; i++)
+        {
+            if(vetor[i] > valorMedia)
+                valorAcimaMedia.push(vetor[i]);
+        }
+        return valorAcimaMedia;
+    }
+
+</script>
+</body>
+</html>

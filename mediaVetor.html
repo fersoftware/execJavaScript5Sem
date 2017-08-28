@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    function lerNumeros(vet) {
+        var x = 0;
+
+        for(var i = 0; i < vet.length; i++) {
+            do {
+                x = parseInt(prompt('Digite o ' + (i+1) + 'º número'));
+            } while (isNaN(x));
+
+            vet[i] = x;
+        }
+    }
+
+    var tam, vet, soma = 0, media;
+
+    do {
+        tam = parseInt(prompt("Digite o tamanho do vetor"));
+    }while (isNaN(tam));
+
+    vet = new Array(tam);
+    lerNumeros(vet);
+
+    for(var i =0;i < vet.length; i++)
+    {
+        soma +=  vet[i];
+    }
+
+    media = soma / vet.length;
+
+    alert('A média = ' + media);
+
+
+    for(i =0;i < vet.length; i++)
+    {
+        if(vet[i] < media)
+        {
+            alert('Abaixo da média = ' + vet[i]);
+        }
+    }
+</script>
+</body>
+</html>

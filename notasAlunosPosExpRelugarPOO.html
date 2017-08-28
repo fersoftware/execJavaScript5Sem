@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var nome, ra, email, nota1, nota2, notaMonografia;
+    var expData, loop = 0;
+    var perg, a = [], alunoPos;
+
+    preencheDados();
+    exibeMedia();
+
+    function preencheDados() {
+        do {
+            do {
+                nome = prompt("Digite o nome do Aluno");
+                expData = /[a-z A-Z]+/;
+            } while (!expData.test(nome));
+
+            do {
+                ra = prompt("Digite o RA");
+                expData = /\d{5}/;
+            } while (!expData.test(ra));
+
+            do {
+                email = prompt("Digite o Email");
+                expData = /\S+@\S+\.\S+/
+            } while (!expData.test(email));
+
+            do {
+                nota1 = prompt("Digite a Nota1");
+                expData = /(\d{1}|\d{2})[.]\d{2}/
+            } while (!expData.test(nota1));
+
+            do {
+                nota2 = prompt("Digite a Nota2");
+                expData = /(\d{1}|\d{2})[.]\d{2}/
+            } while (!expData.test(nota2));
+
+            do {
+                notaMonografia = prompt("Digite a Nota da Monografia");
+                expData = /(\d{1}|\d{2})[.]\d{2}/
+            } while (!expData.test(notaMonografia));
+
+            AlunoPos.prototype = new Aluno(nome, ra, email, nota1, nota2);
+
+            alunoPos = new AlunoPos(notaMonografia);
+
+            a.push(alunoPos);
+
+            do {
+                perg = prompt("Deseja Continuar S ou N ");
+                expData = /^[sSnN]{1}/
+            } while (!expData.test(perg));
+
+            if (perg.toUpperCase() === 'N') loop = 1;
+
+        } while (loop === 0);
+    }
+
+    function Aluno(n, r, e, n1, n2) {
+        this.nome = n;
+        this.ra = r;
+        this.email = e;
+        this.nota1 = n1;
+        this.nota2 = n2;
+
+        this.toString = function () {
+
+            return "Nome: " + this.nome +
+                "\nRA: " + this.ra +
+                "\nEMAIL: " + this.email +
+                "\nNOTA 1: " + this.nota1;
+
+        };
+    }
+
+    function AlunoPos(n) {
+        this.notaMonografia = n;
+
+        this.toString = function () {
+            return "Nome: " + this.nome +
+                "\nRA: " + this.ra +
+                "\nEMAIL: " + this.email +
+                "\nNOTA 1: " + this.nota1 +
+                "\nNOTA 2: " + this.nota2 +
+                "\nNOTA MONOGRAFIA: " + this.notaMonografia;
+        };
+    }
+
+    function exibeMedia() {
+        for (var i = 0; i < a.length; i++) {
+            alert(a[i].toString() + "\nA média é " + calculaMedia(a[i].nota1, a[i].nota2, a[i].notaMonografia));
+        }
+    }
+
+    function calculaMedia(n1, n2, n3) {
+        return (parseFloat(n1) + parseFloat(n2) + parseFloat(n3)) / 3;
+    }
+</script>
+</body>
+</html>

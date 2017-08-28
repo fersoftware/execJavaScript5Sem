@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var nome, cpf, sexo, altura;
+    var expData, loop = 0;
+    var perg, p = [];
+
+    preencheDados();
+    exibePesoIdeal();
+
+    function preencheDados() {
+        do {
+            do {
+                nome = prompt("Digite um Nome");
+                expData = /[a-z A-Z]+/;
+            } while (!expData.test(nome));
+
+            do {
+                cpf = prompt("Digite um CPF");
+                expData = /^\d{3}.\d{3}.\d{3}-\d{2}$/;
+            } while (!expData.test(cpf));
+
+            do {
+                sexo = prompt("Digite o Sexo (M ou F)");
+                expData = /^[mMfF]{1}/
+            } while (!expData.test(sexo));
+
+            do {
+                altura = prompt("Digite uma altura");
+                expData = /\d{1}[.]\d{2}/
+            } while (!expData.test(altura));
+
+            p.push(new Pessoa(nome, cpf, sexo, altura));
+
+            do {
+                perg = prompt("Deseja Continuar S ou N ");
+                expData = /^[sSnN]{1}/
+            } while (!expData.test(perg));
+
+            if (perg.toUpperCase() == 'N') loop = 1;
+
+        } while (loop == 0);
+    }
+    function Pessoa(n, c, s, a) {
+        this.nome = n;
+        this.cpf = c;
+        this.sexo = s;
+        this.altura = a;
+
+        this.toString = function()
+        {
+            var texto = "Nome: " + this.nome +
+                        "\nCPF: " + this.cpf +
+                        "\nSEXO: " + this.sexo +
+                        "\nALTURA: " + this.altura;
+            return texto;
+        };
+    }
+    function exibePesoIdeal() {
+        for (var i = 0; i < p.length; i++) {
+            alert(p[i].toString() + "\nO peso ideal é " + calculoPesoIdeal(p[i].sexo, p[i].altura));
+        }
+    }
+    function calculoPesoIdeal(sexo, altura) {
+        if (sexo.toUpperCase() == 'F') {
+            return (62.1 * parseFloat(altura)) - 44.7;
+        }
+        return (72.7 * parseFloat(altura)) - 58;
+    }
+</script>
+</body>
+</html>

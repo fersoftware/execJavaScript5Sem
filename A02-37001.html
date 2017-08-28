@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    var vetor = [];
+    leVetor();
+
+    alert("Os vetores são " + exibeVetor(vetor));
+    alert("Em ordenação " + ordenarVetor(vetor).join().toString());
+    alert(somaMediaImpar(vetor));
+
+
+    function leVetor()
+    {
+        var n;
+
+        do {
+            n = parseInt(prompt("Digite o tamanho do vetor:"));
+        } while (n < 5 || isNaN(n));
+
+        for(var i =0; i < n; i++)
+        {
+            do {
+                vetor[i] = parseInt(prompt("Digite um número:"));
+            } while (vetor[i] != 0 && isNaN(vetor[i]));
+        }
+
+        return vetor;
+    }
+
+    function exibeVetor(vetor)
+    {
+        return vetor.join().toString();
+    }
+
+    function ordenarVetor(vetor)
+    {
+        return vetor.sort(ordenador);
+    }
+
+    function ordenador(x,y)
+    {
+        return x-y;
+    }
+
+    function somaMediaImpar(vetor)
+    {
+        var somaImpar = 0;
+        var impares = [];
+        var indice = 0;
+
+        for(var i =0; i < vetor.length; i++)
+        {
+            if(vetor[i] %2 !== 0)
+            {
+                somaImpar += vetor[i];
+                impares[indice++] = vetor[i];
+            }
+        }
+        return "os impares são:" + impares.join() + " a soma: " + somaImpar + " e a media é " + somaImpar / vetor.length;
+    }
+
+</script>
+
+</body>
+</html>

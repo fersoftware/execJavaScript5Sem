@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    var vetorNumInteiro = [], i;
+
+    for(i = 0; i < 10; i++)
+    {
+        vetorNumInteiro[i] = parseInt(prompt("Digite um número inteiro"));
+    }
+
+    var semOrdenar = vetorNumInteiro;
+
+    alert('Sem Ordenar: ' + semOrdenar.join() +'\nOrdenados em Crescente: ' + ordenarVetor(vetorNumInteiro));
+
+    function ordenarVetor(vetor)
+    {
+        return vetor.sort(ordenador);
+    }
+
+    function ordenador(x,y)
+    {
+        return x-y;
+    }
+
+</script>
+
+</body>
+</html>

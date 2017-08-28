@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var valorProduto = parseFloat(prompt("Digite o valor do Produto:"));
+    var codDesconto = parseInt(prompt("Digite o código desconto:\n 1 - 5% \n 2 - 10% \n 3 - 20% \n 4 - 50%"));
+    var valorComDesconto = 0;
+
+    switch (codDesconto) {
+        case 1:
+            valorComDesconto =  valorProduto - (valorProduto * 0.05);
+            break;
+        case 2:
+            valorComDesconto =  valorProduto - (valorProduto * 0.10);
+            break;
+        case 3:
+            valorComDesconto =  valorProduto - (valorProduto * 0.20);
+            break;
+        case 4:
+            valorComDesconto =  valorProduto - (valorProduto * 0.5);
+            break;
+        default:
+            alert('Código fornecido inválido');
+            break;
+    }
+
+    alert('Valor do produto sem desconto: ' + valorProduto + '\n' + 'Valor do produto com Desconto: ' + valorComDesconto);
+
+</script>
+</body>
+</html>

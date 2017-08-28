@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var n = parseInt(prompt("Digite um número:"));
+    var soma = 0;
+    var label = "";
+
+    for(var i =0; i < n; i++)
+    {
+        if(i %2 === 0)
+        {
+            label += " + " +  i.toString();
+            soma += i;
+        }
+    }
+
+    alert("A soma de " +  label + " é " + soma);
+
+</script>
+</body>
+</html>

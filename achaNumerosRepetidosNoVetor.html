@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    var vetorNumInteiro = [], i, numInteiroEscolhido;
+
+    for(i = 0; i < 10; i++)
+    {
+        vetorNumInteiro[i] = parseInt(prompt("Digite um número inteiro"));
+    }
+
+    numInteiroEscolhido = parseInt(prompt("Digite um número Inteiro qualquer"));
+
+    alert('O número ' + numInteiroEscolhido + ' ocorre ' + contaNumRepetido(vetorNumInteiro) + ' vez(es)');
+
+    function contaNumRepetido(vetor)
+    {
+        var x_repeticao = 0;
+
+        for(var i = 0; i < vetor.length; i++)
+        {
+            if(numInteiroEscolhido == vetor[i])
+            {
+                x_repeticao++;
+            }
+        }
+        return x_repeticao;
+    }
+
+</script>
+
+</body>
+</html>

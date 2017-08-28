@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Avaliação 01</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var precoDiaria = parseFloat(prompt("Digite o valor da diária"));
+    var diasContratarServico = parseInt(prompt("Digite os dias para contratar o serviço"));
+    var precoTotalDiaria = precoDiaria * diasContratarServico;
+    var numeroParcelas = 0;
+    var valorAcrescimo = 0;
+
+    if(precoTotalDiaria <= 1500)
+    {
+        alert('Pagamento a Vista de R$' + precoTotalDiaria.toLocaleString());
+    }
+    else if(precoTotalDiaria > 1500)
+    {
+        do
+        {
+            numeroParcelas = parseInt(prompt('Você pode parcelar em até 4 vezes \n Digite o número de parcelas'));
+
+            switch (numeroParcelas) {
+                case 1:
+                    valorAcrescimo =  precoTotalDiaria;
+                    break;
+                case 2:
+                    valorAcrescimo =  precoTotalDiaria * 1.10;
+                    break;
+                case 3:
+                    valorAcrescimo =  precoTotalDiaria * 1.12;
+                    break;
+                case 4:
+                    valorAcrescimo =  precoTotalDiaria * 1.15;
+                    break;
+                default:
+                    alert('Valor fornecido inválido, tente novamente');
+                    break;
+            }
+
+        }while (numeroParcelas < 0 || numeroParcelas > 5)
+        alert('O valor da parcela em ' + numeroParcelas + 'x é de R$ ' + valorAcrescimo.toLocaleString());
+    }
+
+</script>
+</body>
+</html>

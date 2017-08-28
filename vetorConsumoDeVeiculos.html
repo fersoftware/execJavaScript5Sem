@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script type="text/javascript">
+
+    var vetorCarros = [], vetorConsumo = [], i;
+
+    for(i = 0; i < 5; i++)
+    {
+        vetorCarros[i] = prompt("Digite uma marca de carro");
+    }
+
+    for(i = 0; i < 5; i++)
+    {
+        vetorConsumo[i] = parseInt(prompt("Digite quantos KM a marca " + vetorCarros[i]) + ' faz por litro');
+    }
+
+    var ConsumoDeMenorParaMaior = vetorConsumo.sort(ordenador);
+
+    for(i = 0; i < vetorCarros.length ; i++)
+    {
+        if(vetorConsumo[i] == ConsumoDeMenorParaMaior[0])
+        {
+            alert('O carro mais economico é o ' +  vetorCarros[i] + ' que faz ' + vetorConsumo[i] + ' km por litro');
+        }
+    }
+
+    function ordenador(x,y)
+    {
+        return x-y;
+    }
+
+</script>
+
+</body>
+</html>

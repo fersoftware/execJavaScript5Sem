@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Aula 03</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var nVezes = parseInt(prompt("Digite a quantidade de vezes:"));
+
+    function somaImparesMaiorQue2MenorQue7(nVezes)
+    {
+        var somaImpar = 0;
+        var qtdNumeroImpar = 0;
+
+        for(var i =0; i < nVezes; i++)
+        {
+            do {
+                var n = parseInt(prompt("Digite um número:"));
+
+            } while (n < 2 && n > 7);
+
+            if(n %2 !== 0)
+            {
+                qtdNumeroImpar ++;
+                somaImpar += n;
+            }
+        }
+        return somaImpar / qtdNumeroImpar;
+    }
+
+    alert("A média dos Impares é " +  somaImparesMaiorQue2MenorQue7(nVezes));
+
+</script>
+</body>
+</html>
